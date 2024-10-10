@@ -19,8 +19,8 @@ export const Home = ({ searchParams }) => {
       try {
         // const response = await axios.get('http://localhost:5000/api/v1/getProduct');
         // const response = await axios.get(`${Backend_url}/getProduct`);
-        // const response = await axios.get('https://onrender.com/api/v1/getProduct');
-        // const response = await axios.get('https://onrender.com');
+        // const response = await axios.get('https://trendz-home-collection.onrender.com/api/v1/getProduct');
+        // const response = await axios.get('https://trendz-home-collection.onrender.com');
         // setProducts(response.data.data);
 
 
@@ -84,7 +84,7 @@ export const Home = ({ searchParams }) => {
                 className="rounded-md w-full h-[180px] object-cover"
                 // src={`http://localhost:5000/files/${product.image}`}
                 loading='lazy'
-                // src={`https://onrender.com/files/${product.image}`}
+                // src={`https://https://trendz-home-collection.onrender.com/files/${product.image}`}
                 src={product.image}
                 // src={product.image}
                 alt={product.name}

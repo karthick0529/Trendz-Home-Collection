@@ -19,7 +19,7 @@ const CartItem = ({ item }) => {
         <img
           className="rounded-md w-full h-40 md:h-48 lg:h-64 object-cover"
           // src={`http://localhost:5000/files/${item.image}`}
-          // src={`https://onrender.com/files/${item.image}`}
+          // src={`https://trendz-home-collection.onrender.com/files/${item.image}`}
           src={item.image}
           alt={item.name}
         />
