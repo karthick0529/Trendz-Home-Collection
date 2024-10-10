@@ -6,7 +6,7 @@ require('dotenv').config();
 
 const app = express();
 const corsOptions ={
-    origin: ["http://localhost:5173" , "https://trendz-home-collection-24htnigk0-karthick0529s-projects.vercel.app"],
+    origin: ["http://localhost:5173" , "https://trendz-home-collection.vercel.app/"],
     method:"GET, POST, PUT, DELETE, PATCH, HEAD",
     Credential:true
 };
