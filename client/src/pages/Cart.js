@@ -1,12 +1,14 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux"; // Import useDispatch
 import CartItem from "../components/CartItem";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Footer from "../components/Footer";
 import toast from "react-hot-toast";
+import { clear } from "../redux/Slices/CartSlice"; // Import the clear action
 
 const Cart = () => {
   const { cart } = useSelector((state) => state);
+  const dispatch = useDispatch(); // Initialize dispatch
   const [totalAmount, setTotalAmount] = useState(0);
 
   // Separate state for each field in the shipping address form
@@ -31,7 +33,6 @@ const Cart = () => {
     const shippingAddress = `${road}, ${post}, ${city}, ${taluka}, ${district}, Pin: ${pin}`;
 
     const options = {
-      // key: process.env.RAZORPAY_KEY, // Replace with your Razorpay test API key
       key: 'rzp_test_3WUTrpolUhcOdV', // Replace with your Razorpay test API key
       amount: totalAmount * 100, // Amount in smallest currency unit (e.g., cents)
       currency: "INR", // Currency code
@@ -40,6 +41,10 @@ const Cart = () => {
       image: "https://your-logo-url.com/trendy.ipg", // Your logo URL
       handler: function (response) {
         alert(`Payment successful: ${response.razorpay_payment_id}`);
+        
+        // Dispatch the clear action to clear the cart
+        dispatch(clear());
+
         // Here you can send the payment details and shipping address to your backend for verification and order processing
       },
       prefill: {
@@ -154,4 +159,3 @@ const Cart = () => {
 };
 
 export default Cart;
-

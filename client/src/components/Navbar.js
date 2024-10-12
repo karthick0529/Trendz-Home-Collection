@@ -44,7 +44,7 @@ export const Navbar = ({ onSearch }) => {
       </NavLink>
 
       {/* Search Section */}
-      <div className="hidden md:flex items-center justify-center w-full mx-10">
+      <div className="hidden md:flex items-center mx-10">
         <form onSubmit={handleSearch} className="flex space-x-4">
           {/* Price Filter */}
           <input 
@@ -85,7 +85,7 @@ export const Navbar = ({ onSearch }) => {
       </div>
 
       {/* Links Section for Desktop */}
-      <div className="hidden md:flex space-x-8 text-gray-300 font-semibold">
+      <div className="hidden md:flex items-center space-x-6 text-gray-300 font-semibold">
         <NavLink to="/" className="hover:text-gold-400 transition duration-300">
           Home
         </NavLink>
@@ -109,14 +109,12 @@ export const Navbar = ({ onSearch }) => {
             </NavLink>
           </>
         ) : (
-         <div className=''>
-              <button 
-                onClick={logoutHandler} 
-                className="bg-gold-600 text-gray-300  rounded-md hover:bg-gold-700 transition duration-300"
-              >
-                SignOut
-              </button>
-         </div>
+          <button 
+            onClick={logoutHandler} 
+            className="bg-gold-600 text-gray-300 px-4 py-2 rounded-md hover:bg-gold-700 transition duration-300"
+          >
+            SignOut
+          </button>
         )}
       </div>
 
@@ -146,34 +144,15 @@ export const Navbar = ({ onSearch }) => {
               </NavLink>
             </>
           ) : (
-            <div className='flex   justify-start'>
-                <button 
-                  onClick={() => { logoutHandler(); setIsMobileMenuOpen(false); }} 
-                  className="hover:text-gold-400 transition duration-300"
-                >
-                  SignOut
-                </button>
-            </div>
+            <button 
+              onClick={() => { logoutHandler(); setIsMobileMenuOpen(false); }} 
+              className="hover:text-gold-400 transition duration-300"
+            >
+              SignOut
+            </button>
           )}
         </div>
       )}
     </nav>
   );
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
