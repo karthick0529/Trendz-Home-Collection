@@ -1,8 +1,8 @@
 # Deployment Liks:
 
-    Front-End: 
+    Front-End: https://trendz-home-collection.vercel.app/
 
-    Back-End: 
+    Back-End: https://trendz-home-collection.onrender.com
 
 
  🚀 𝗧𝗲𝗰𝗵 𝗦𝘁𝗮𝗰𝗸 & 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀：
@@ -16,9 +16,11 @@
 - 𝗕𝗮𝗰𝗸𝗲𝗻𝗱 hosted on 𝗥𝗲𝗻𝗱𝗲𝗿
 
  🛠️ 𝗖𝗵𝗮𝗹𝗹𝗲𝗻𝗴𝗲𝘀 𝗙𝗮𝗰𝗲𝗱 & 𝗦𝗼𝗹𝘂𝘁𝗶𝗼𝗻𝘀:
+
 𝟭. 𝗔𝘂𝘁𝗵𝗲𝗻𝘁𝗶𝗰𝗮𝘁𝗶𝗼𝗻 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 🔒:
  - Challenge: Implementing a robust authentication flow using Firebase.
  - Solution: Leveraged Firebase Authentication, enabling seamless and secure login & signup functionality.
+ - GitHub Login Integration: Implemented login with GitHub using Firebase, which allows users to authenticate easily. However, note that during the GitHub signup process,       users may encounter an error related to redirect URIs not being associated with the application. Ensure that your application's OAuth redirect URIs are correctly             configured in the Firebase console.
 
 𝟮. 𝗣𝗮𝘆𝗺𝗲𝗻𝘁 𝗚𝗮𝘁𝗲𝘄𝗮𝘆 𝗜𝗻𝘁𝗲𝗴𝗿𝗮𝘁𝗶𝗼𝗻 💳:
  - Challenge: Integrating Razorpay for smooth payment processing.
