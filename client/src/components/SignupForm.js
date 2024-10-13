@@ -186,9 +186,9 @@ export const SignupForm = () => {
         <div className="flex justify-center space-x-4 mt-6">
           {/* Import images from local */}
           {[
-            { img: googleIcon, provider: "google" },
-            { img: facebookIcon, provider: "facebook" },
-            { img: githubIcon, provider: "github" },
+            { img: googleIcon || "defaultGoogleIcon.png", provider: "google" },
+            { img: facebookIcon || "defaultFacebookIcon.png", provider: "facebook" },
+            { img: githubIcon || "defaultGithubIcon.png", provider: "github" },
           ].map((item, index) => (
             <img
               key={index}
@@ -199,6 +199,7 @@ export const SignupForm = () => {
               title={`Sign in with ${
                 item.provider.charAt(0).toUpperCase() + item.provider.slice(1)
               }`}
+              onError={(e) => { e.target.src = "/fallbackIcon.png"; }}
             />
           ))}
         </div>
