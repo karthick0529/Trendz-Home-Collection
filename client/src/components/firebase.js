@@ -1,5 +1,11 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, GithubAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  getAuth,
+  GoogleAuthProvider,
+  FacebookAuthProvider,
+  GithubAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -16,20 +22,34 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
-const provider = new GithubAuthProvider();
 
-// Function to sign in with GitHub
-export const signInWithGitHub = () => {
-  signInWithPopup(auth, provider)
+// Initialize the providers
+const googleProvider = new GoogleAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
+const githubProvider = new GithubAuthProvider();
+
+// General function for sign-in using any provider
+const signInWithProvider = (provider) => {
+  return signInWithPopup(auth, provider)
     .then((result) => {
-      const credential = GithubAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      const user = result.user;
-      console.log("GitHub User:", user);
+      console.log(result.user);
+      // Handle success (store user info or any additional operations)
+      return result.user; // Returning the user object in case you want to use it
     })
     .catch((error) => {
-      console.error("GitHub Sign-In Error:", error);
+      console.error(error);
+      // Handle errors (display an error message, etc.)
+      throw error;
     });
 };
+
+// Google Sign-In
+export const signInWithGoogle = () => signInWithProvider(googleProvider);
+
+// Facebook Sign-In
+export const signInWithFacebook = () => signInWithProvider(facebookProvider);
+
+// GitHub Sign-In
+export const signInWithGithub = () => signInWithProvider(githubProvider);
 
 export default app;
