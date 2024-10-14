@@ -20,7 +20,10 @@
 𝟭. 𝗔𝘂𝘁𝗵𝗲𝗻𝘁𝗶𝗰𝗮𝘁𝗶𝗼𝗻 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 🔒:
  - Challenge: Implementing a robust authentication flow using Firebase.
  - Solution: Leveraged Firebase Authentication, enabling seamless and secure login & signup functionality.
- - GitHub Login Integration: Implemented login with GitHub using Firebase, which allows users to authenticate easily. However, note that during the GitHub signup process,       users may encounter an error related to redirect URIs not being associated with the application. Ensure that your application's OAuth redirect URIs are correctly             configured in the Firebase console.
+ - GitHub Login Integration: Implemented GitHub login using Firebase, simplifying user authentication. An important consideration is configuring OAuth redirect URIs         
+   correctly in the Firebase console to avoid errors during signups.
+ - Facebook and Google Login: Extended authentication options by integrating Facebook and Google login, allowing users to authenticate through their preferred social 
+   accounts with the same Firebase security measures.
 
 𝟮. 𝗣𝗮𝘆𝗺𝗲𝗻𝘁 𝗚𝗮𝘁𝗲𝘄𝗮𝘆 𝗜𝗻𝘁𝗲𝗴𝗿𝗮𝘁𝗶𝗼𝗻 💳:
  - Challenge: Integrating Razorpay for smooth payment processing.
